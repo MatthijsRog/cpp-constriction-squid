@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['main_0',['main',['../_main_8cpp.html#ac0f2228420376f4db7e1274f2b41667c',1,'Main.cpp']]],
-  ['main_2ecpp_1',['Main.cpp',['../_main_8cpp.html',1,'']]]
+  ['linkingvariablex_0',['linkingvariablex',['../class_superconductor.html#a5408f4052b53ea2ae4025145316c2dfb',1,'Superconductor::linkingVariableX() const'],['../class_superconductor.html#aec8ec9516aca7a4064c542bcc6412fdb',1,'Superconductor::linkingVariableX()']]],
+  ['linkingvariabley_1',['linkingvariabley',['../class_superconductor.html#aab585cf9b486789a0f2d11cd3b8705c4',1,'Superconductor::linkingVariableY() const'],['../class_superconductor.html#a1a40bab94d8a450c0e0c72e6d3defa62',1,'Superconductor::linkingVariableY()']]]
 ];
