@@ -10,6 +10,11 @@ Field::Field(int width, int height) : _width(width), _height(height) {
     fill(0);
 }
 
+Field::Field() : _width(1), _height(1) {
+    _field = std::vector<std::vector<complex>>(_width, std::vector<complex>(_height));
+    fill(0);
+}
+
 Field::~Field() {
 }
 

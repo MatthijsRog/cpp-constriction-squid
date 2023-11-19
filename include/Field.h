@@ -20,6 +20,11 @@ public:
     Field(int width, int height);
 
     /**
+     * @brief Constructs a new Field object of minimal size (1x1)
+     */
+    Field();
+
+    /**
      * @brief Destroys the Field object.
      */
     ~Field();
@@ -119,8 +124,8 @@ public:
 
 
 private:
-    int _width;
-    int _height;
+    std::size_t _width;
+    std::size_t _height;
     std::vector<std::vector<complex> > _field;
 };
 
