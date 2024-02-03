@@ -5,7 +5,7 @@
 #ifndef CPP_CONSTRICTION_SQUID_SUPERCONDUCTOR_H
 #define CPP_CONSTRICTION_SQUID_SUPERCONDUCTOR_H
 
-#include "Field.h"
+#include "AbstractField.h"
 
 class Superconductor {
 public:

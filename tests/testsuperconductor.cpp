@@ -72,10 +72,11 @@ TEST(SuperconductorTest, AccessOperatorNonConst) {
     EXPECT_EQ(superconductor.fluxCellPhasor()(0, 0), complex(1.0, 1.0));
 }
 
-TEST(SuperconductorTest, InvalidWidth) {
+TEST(SuperconductorTest, InvalidConstructorArguments) {
     EXPECT_THROW(Superconductor(-1, 10), std::invalid_argument);
     EXPECT_THROW(Superconductor(10, -1), std::invalid_argument);
     EXPECT_THROW(Superconductor(-1, -1), std::invalid_argument);
 }
+
 
 

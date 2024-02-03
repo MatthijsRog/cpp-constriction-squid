@@ -4,21 +4,22 @@
 
 #include "../include/Superconductor.h"
 
-Superconductor::Superconductor(int width, int height) : _width(width), _height(height) {
+Superconductor::Superconductor(int width, int height) : _width(width), _height(height), _orderParameter(width, height),
+                _linkingVariableX(width - 1, height), _linkingVariableY(width, height - 1),
+                _fluxCellPhasor(width - 1, height - 1) {
     if (width < 2 || height < 2) {
         throw std::invalid_argument("Width and height must be at least 2.");
     }
-
-    _orderParameter = Field(width, height);
-    _linkingVariableX = Field(width-1, height);
-    _linkingVariableY = Field(width, height-1);
-    _fluxCellPhasor = Field(width-1, height-1);
 }
 
 Superconductor::~Superconductor() {
 }
 
-Superconductor::Superconductor(const Superconductor& other) : _width(other._width), _height(other._height) {
+Superconductor::Superconductor(const Superconductor& other) : _width(other._width), _height(other._height),
+        _orderParameter(other._width, other._height),
+        _linkingVariableX(other._width - 1, other._height),
+        _linkingVariableY(other._width, other._height - 1),
+        _fluxCellPhasor(other._width - 1, other._height - 1) {
     _orderParameter = other._orderParameter;
     _linkingVariableX = other._linkingVariableX;
     _linkingVariableY = other._linkingVariableY;
@@ -35,12 +36,11 @@ Superconductor& Superconductor::operator=(const Superconductor& other) {
     return *this;
 }
 
-Superconductor::Superconductor(Superconductor&& other) noexcept : _width(other._width), _height(other._height) {
-    _orderParameter = std::move(other._orderParameter);
-    _linkingVariableX = std::move(other._linkingVariableX);
-    _linkingVariableY = std::move(other._linkingVariableY);
-    _fluxCellPhasor = std::move(other._fluxCellPhasor);
-
+Superconductor::Superconductor(Superconductor&& other) noexcept : _width(other._width), _height(other._height),
+        _orderParameter(other._width, other._height),
+        _linkingVariableX(other._width - 1, other._height),
+        _linkingVariableY(other._width, other._height - 1),
+        _fluxCellPhasor(other._width - 1, other._height - 1) {
     // Invalidate other
     other._width = 0;
     other._height = 0;
